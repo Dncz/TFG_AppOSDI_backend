@@ -3,7 +3,9 @@
 # En el archivo server/src/config.py se encuentran las variables de entorno que se utilizan en el servidor.
 #
 # FUSEKI_URL = "http://localhost:3030/OSDI_dataset/query"
-FUSEKI_URL = "http://localhost:3030/OSDI_dataset2/query"
+# FUSEKI_URL = "http://localhost:3030/OSDI_dataset2/query"
+FUSEKI_URL = "http://localhost:3030/OSDI_dataset3/query"
+FUSEKI_UPDATE = "http://localhost:3030/OSDI_dataset2/update"
 
 PREFIXES = """
     PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
