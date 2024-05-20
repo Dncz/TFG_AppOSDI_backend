@@ -1,78 +1,51 @@
-Instalar pandas 3, además, habrá que instalar pyarrow
-para iniciar el servidor de fuseki, ejecutar el siguiente comando:
+
+# AppOSDI server
+Este repositorio contiene el servidor para la aplicación web AppOSDI, una interfaz que facilita la inserción y consulta de información en la ontología OSDI, utilizada para la evaluación económica de tecnologías sanitarias en el contexto de enfermedades raras.
+
+## Requisitos Previos
+Antes de instalar y ejecutar el servidor, asegúrate de tener instalados los siguientes componentes:
+- Python (versión 3.8 o superior)
+- pip (versión 21 o superior)
+- SPARQLWrapper (versión 2.0.0)
+- Flask (versión 3.0.2)
+- flask-cors (versión 4.0.0 o superior)
+
+## Instalación
+Sigue los pasos a continuación para instalar y configurar el servidor de AppOSDI:
+1. **Clona el repositorio:**
+  ```bash
+  git clone 
+  cd TFG_AppOSDI_server
+  ```
+<!-- TODO: poner las depencias en el fichero -->
+2. **Instalar las dependencias:**
+  ```bash
+  pip install -r requirements.txt
+  ```
+
+3. **Descargar Fuseki:**
+  Descarga el archivo `apache-jena-fuseki-4.4.1.zip` desde la página oficial de [Apache Jena](https://jena.apache.org/documentation/fuseki2/#download-fuseki-with-ui) y descomprímelo en el directorio raíz del proyecto o en cualquier otro directorio de tu elección.
+  Inicia el servidor (dentro de la carpeta descomprimida) de Fuseki ejecutando el siguiente comando:
+  ```bash
+  java -jar fuseki-server.jar
+  ```
+  Asegúrate de que el servidor de Fuseki esté en ejecución antes de iniciar el servidor de la aplicación.
+
+  Crear un dataset en Fuseki llamado `osdi` y cargar la ontología `osdi.owl` en el dataset creado.
+  Nota: La ontología `osdi.owl` se encuentra en la carpeta `ontologies`. Debes cambiar el formato .owl a .ttl para poder cargarla en Fuseki.
+  
+
+## Ejecución
+Primero asegúrate de que el servidor de la aplicación y Fuseki estén en ejecución antes de iniciar el servidor. Para iniciar el servidor, ejecuta el siguiente comando:
 ```bash
-java -jar fuseki-server.jar
+python3 app.py
 ```
-Obviamente en el directorio donde se encuentre el archivo jar.
-
-## Configuración
+Al ejecutar el comando anterior, el servidor se iniciará en el puerto 5000. Para acceder a la aplicación, abre un navegador web y navega a la dirección `http://localhost:5000/`.
 
 
-<!-- Consultas SPARQL -->
-Esto devuelve todas las propiedades de la ontología y sus subpropiedades
-```SQL
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX ont: <http://www.ull.es/iis/simulation/ontologies/disease-simulation>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX owl: <http://www.w3.org/2002/07/owl#>
-PREFIX xml: <http://www.w3.org/XML/1998/namespace/>
-PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+## Licencia
+Este proyecto está licenciado bajo la licencia MIT. Consulta el archivo [LICENSE](LICENSE) para obtener más información.
 
-SELECT DISTINCT ?dataTypeProperty ?subproperty
-WHERE {
-  {
-    ?property rdf:type owl:DatatypeProperty .
-  }
-  UNION
-  {
-    ?property rdfs:subPropertyOf ?subproperty .
-    ?subproperty rdf:type owl:DatatypeProperty .
-  }
-}
-
-```	
-Esto da las subpropiedades de las propiedades
-```SQL
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX ont: <http://www.ull.es/iis/simulation/ontologies/disease-simulation>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX owl: <http://www.w3.org/2002/07/owl#>
-PREFIX xml: <http://www.w3.org/XML/1998/namespace/>
-PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-
-SELECT DISTINCT ?dataTypeProperty ?subproperty
-WHERE {
-  {
-    ?property rdf:type owl:DatatypeProperty .
-  }
-  UNION
-  {
-    ?subproperty rdfs:subPropertyOf ?property .
-    ?subproperty rdf:type owl:DatatypeProperty .
-  }
-}
-
-```	
-
-Esto las propiedades que tienen subpropiedades
-```SQL
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX ont: <http://www.ull.es/iis/simulation/ontologies/disease-simulation>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX owl: <http://www.w3.org/2002/07/owl#>
-PREFIX xml: <http://www.w3.org/XML/1998/namespace/>
-PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-
-SELECT DISTINCT ?dataTypeProperty ?subproperty
-WHERE {
-  {
-    ?property rdf:type owl:DatatypeProperty .
-  }
-  UNION
-  {
-    ?property rdfs:subPropertyOf ?subproperty .
-    ?subproperty rdf:type owl:DatatypeProperty .
-  }
-}
-
-```	
+## Contacto
+Si tienes alguna pregunta o sugerencia, no dudes en ponerte en contacto conmigo a través de mi dirección de correo electrónico:
+alu0101328348@ull.edu.es
