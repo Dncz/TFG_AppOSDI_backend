@@ -18,7 +18,7 @@ This application, CRUDOnt, will allow users to query and insert information into
 
 
 ## Estructura del repositorio
-El repositorio se divide en dos carpetas principales: `client`, `server` y `ontology`. La carpeta [client](https://github.com/Dncz/TFG_AppOSDI_frontend) contiene el código fuente del cliente de la aplicación web, mientras que la carpeta [server](https://github.com/Dncz/TFG_AppOSDI_backend) contiene el código fuente del servidor de la aplicación. La carpeta `ontology` contiene la ontología OSDI en formato .owl y .ttl.
+El repositorio se divide en dos carpetas principales: `client`, `server` y `ontology`. La carpeta [client](https://github.com/Dncz/TFG_CRUDOnt_frontend) contiene el código fuente del cliente de la aplicación web, mientras que la carpeta [server](https://github.com/Dncz/TFG_CRUDOnt_backend) contiene el código fuente del servidor de la aplicación. La carpeta `ontology` contiene la ontología OSDI en formato .owl y .ttl.
 
 ## Autor
 - Dana Belén Choque Zárate - alu0101328348@ull.edu.es
