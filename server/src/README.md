@@ -1,6 +1,6 @@
 
-# AppOSDI server
-Este repositorio contiene el servidor para la aplicación web AppOSDI, una interfaz que facilita la inserción y consulta de información en la ontología OSDI, utilizada para la evaluación económica de tecnologías sanitarias en el contexto de enfermedades raras.
+# CRUDOnt server
+Este repositorio contiene el servidor para la aplicación web CRUDOnt, una interfaz que facilita la inserción y consulta de información en cualquier ontología.
 
 ## Requisitos Previos
 Antes de instalar y ejecutar el servidor, asegúrate de tener instalados los siguientes componentes:
@@ -11,11 +11,11 @@ Antes de instalar y ejecutar el servidor, asegúrate de tener instalados los sig
 - flask-cors (versión 4.0.0 o superior)
 
 ## Instalación
-Sigue los pasos a continuación para instalar y configurar el servidor de AppOSDI:
+Sigue los pasos a continuación para instalar y configurar el servidor de CRUDOnt:
 1. **Clona el repositorio:**
   ```bash
-  git clone 
-  cd TFG_AppOSDI_server
+  git clone https://github.com/Dncz/TFG_CRUDOnt_backend.git
+  cd TFG_CRUDOnt_server
   ```
 <!-- TODO: poner las depencias en el fichero -->
 2. **Instalar las dependencias:**
