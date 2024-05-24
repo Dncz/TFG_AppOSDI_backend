@@ -49,7 +49,7 @@ def get_object_properties(class_Name):
       })
     
     json_string = json.dumps(results_json, indent=2)
-    # print(json_string)
+
     if len(json_string) > 0:
       return json_string
     else:
@@ -88,7 +88,7 @@ def get_dataproperties(class_Name):
       }
     
     json_string = json.dumps(results_json, indent=2)
-    # print(json_string)
+
     if len(json_string) > 0:
       return json_string
     else:
@@ -114,9 +114,7 @@ def get_classes():
     
     sparql.setQuery(query)
     ret = sparql.queryAndConvert()
-    
-    # print (ret)
-    
+        
     results_json = []
     for r in ret['results']['bindings']:
       results_json.append({
@@ -127,7 +125,7 @@ def get_classes():
       })
     
     json_string = json.dumps(results_json, indent=2)
-    # print(json_string)
+
     if len(json_string) > 0:
       return json_string
     else:
@@ -163,7 +161,7 @@ def get_restriction_dataproperty(class_Name, data_Property_Name):
       })
     
     json_string = json.dumps(results_json, indent=2)
-    # print(json_string)
+
     if len(json_string) > 0:
       return json_string
     else:
@@ -201,7 +199,7 @@ def get_intances(class_name):
       })
       
     json_string = json.dumps(results_json, indent=2)
-    # print(json_string)
+
     if len(json_string) > 0:
       return json_string
     else:
@@ -217,7 +215,7 @@ sparqlUpdate.setReturnFormat(JSON)
 def create_instance(class_Name):
   try:
     data = request.json
-    # print(data)
+
     if not data:
       return jsonify({"error": "No data provided"}), 400
     

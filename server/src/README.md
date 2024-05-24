@@ -17,13 +17,8 @@ Sigue los pasos a continuación para instalar y configurar el servidor de CRUDOn
   git clone https://github.com/Dncz/TFG_CRUDOnt_backend.git
   cd TFG_CRUDOnt_server
   ```
-<!-- TODO: poner las depencias en el fichero -->
-2. **Instalar las dependencias:**
-  ```bash
-  pip install -r requirements.txt
-  ```
 
-3. **Descargar Fuseki:**
+2. **Descargar Fuseki:**
   Descarga el archivo `apache-jena-fuseki-4.4.1.zip` desde la página oficial de [Apache Jena](https://jena.apache.org/documentation/fuseki2/#download-fuseki-with-ui) y descomprímelo en el directorio raíz del proyecto o en cualquier otro directorio de tu elección.
   Inicia el servidor (dentro de la carpeta descomprimida) de Fuseki ejecutando el siguiente comando:
   ```bash
